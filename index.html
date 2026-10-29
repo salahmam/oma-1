@@ -1,0 +1,861 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>قطرة ساوث مون الأصلي | الحل النهائي لطنين الأذن</title>
+    <!-- خط تجوال العربي الاحترافي -->
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&display=swap" rel="stylesheet">
+    <!-- أيقونات FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- استدعاء ملف الإعدادات الخارجي -->
+    <script src="config/settings.js"></script>
+
+    <style>
+        :root {
+            --primary: #0b4f3a;
+            --primary-light: #136f52;
+            --accent: #d4af37;
+            --accent-hover: #b89628;
+            --bg-light: #f4f7f6;
+            --text-dark: #1f2937;
+            --white: #ffffff;
+            --danger: #dc2626;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Tajawal', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--bg-light);
+            color: var(--text-dark);
+            line-height: 1.7;
+            padding-bottom: 80px;
+        }
+
+        /* الهيدر */
+        header {
+            background: linear-gradient(135deg, var(--primary), #062c20);
+            color: var(--white);
+            padding: 15px 5%;
+            position: sticky;
+            top: 0;
+            z-index: 999;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+        }
+
+        .logo {
+            font-size: 1.4rem;
+            font-weight: 900;
+            color: var(--accent);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .btn-order-nav {
+            background: var(--accent);
+            color: #000;
+            padding: 8px 20px;
+            border-radius: 50px;
+            font-weight: 800;
+            text-decoration: none;
+            border: none;
+            cursor: pointer;
+            transition: 0.3s;
+            font-size: 0.95rem;
+        }
+
+        .btn-order-nav:hover {
+            background: var(--accent-hover);
+            transform: scale(1.05);
+        }
+
+        /* القسم الرئيسي Hero */
+        .hero {
+            background: linear-gradient(rgba(11, 79, 58, 0.92), rgba(6, 44, 32, 0.95)), url('images/2.jpg') center/cover;
+            color: var(--white);
+            padding: 50px 5%;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .hero-text h1 {
+            font-size: 2.5rem;
+            font-weight: 900;
+            color: var(--accent);
+            margin-bottom: 15px;
+            line-height: 1.3;
+        }
+
+        .hero-text p {
+            font-size: 1.15rem;
+            margin-bottom: 20px;
+            opacity: 0.95;
+        }
+
+        .price-box {
+            background: rgba(255,255,255,0.1);
+            border: 2px solid var(--accent);
+            padding: 15px 25px;
+            border-radius: 15px;
+            display: inline-block;
+            margin-bottom: 25px;
+        }
+
+        .price-box .price {
+            font-size: 2rem;
+            font-weight: 900;
+            color: var(--accent);
+        }
+
+        .price-box .delivery {
+            display: block;
+            font-size: 0.95rem;
+            color: #a7f3d0;
+        }
+
+        /* معرض الصور التفاعلي */
+        .gallery-container {
+            background: var(--white);
+            padding: 15px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            text-align: center;
+        }
+
+        .main-img-box {
+            width: 100%;
+            height: 380px;
+            border-radius: 12px;
+            overflow: hidden;
+            margin-bottom: 12px;
+            border: 1px solid #e5e7eb;
+        }
+
+        .main-img-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            background: #fff;
+            transition: 0.3s;
+        }
+
+        .thumbnails {
+            display: flex;
+            gap: 8px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .thumbnails img {
+            width: 55px;
+            height: 55px;
+            object-fit: cover;
+            border-radius: 8px;
+            cursor: pointer;
+            border: 2px solid transparent;
+            transition: 0.2s;
+            opacity: 0.7;
+        }
+
+        .thumbnails img:hover, .thumbnails img.active {
+            border-color: var(--primary);
+            opacity: 1;
+            transform: scale(1.08);
+        }
+
+        /* الأزرار الرئيسية */
+        .cta-btn {
+            background: linear-gradient(45deg, var(--accent), #f3cf55);
+            color: #000;
+            padding: 16px 35px;
+            font-size: 1.25rem;
+            font-weight: 900;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            box-shadow: 0 8px 20px rgba(212, 175, 55, 0.4);
+            transition: 0.3s;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .cta-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 25px rgba(212, 175, 55, 0.6);
+        }
+
+        /* الأقسام العامة */
+        section {
+            padding: 60px 5%;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2rem;
+            font-weight: 900;
+            color: var(--primary);
+            margin-bottom: 40px;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            width: 80px;
+            height: 4px;
+            background: var(--accent);
+            display: block;
+            margin: 10px auto 0;
+            border-radius: 2px;
+        }
+
+        /* البطاقات والشبكات */
+        .grid-2 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+        }
+
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 20px;
+        }
+
+        .card {
+            background: var(--white);
+            padding: 25px;
+            border-radius: 16px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+            border-top: 4px solid var(--primary);
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card h3 {
+            color: var(--primary);
+            margin-bottom: 12px;
+            font-size: 1.3rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .card h3 i {
+            color: var(--accent);
+        }
+
+        /* قسم المضاعفات التحذيري */
+        .warning-box {
+            background: #fef2f2;
+            border: 2px solid #fecaca;
+            border-radius: 16px;
+            padding: 30px;
+            margin-top: 35px;
+            text-align: center;
+        }
+
+        .warning-box h3 {
+            color: var(--danger);
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+        }
+
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            justify-content: center;
+        }
+
+        .tag {
+            background: var(--white);
+            color: var(--danger);
+            padding: 10px 20px;
+            border-radius: 50px;
+            font-weight: 700;
+            box-shadow: 0 2px 8px rgba(220, 38, 38, 0.1);
+            border: 1px solid #fca5a5;
+        }
+
+        /* مميزات المنتج وطريقة الاستخدام */
+        .features-sec {
+            background: linear-gradient(135deg, var(--primary), #073828);
+            color: var(--white);
+            border-radius: 25px;
+            padding: 50px 4%;
+            margin: 40px auto;
+        }
+
+        .features-sec .section-title {
+            color: var(--accent);
+        }
+
+        .step-card {
+            background: rgba(255,255,255,0.08);
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            padding: 25px;
+            border-radius: 16px;
+            text-align: center;
+        }
+
+        .step-num {
+            width: 50px;
+            height: 50px;
+            background: var(--accent);
+            color: #000;
+            font-weight: 900;
+            font-size: 1.4rem;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 15px;
+        }
+
+        /* آراء الزبائن العراقيين */
+        .review-card {
+            background: var(--white);
+            padding: 25px;
+            border-radius: 16px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.06);
+            position: relative;
+        }
+
+        .stars {
+            color: #f59e0b;
+            margin-bottom: 10px;
+        }
+
+        .reviewer {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-top: 15px;
+            padding-top: 15px;
+            border-top: 1px solid #f3f4f6;
+        }
+
+        .reviewer-avatar {
+            width: 45px;
+            height: 45px;
+            background: var(--primary);
+            color: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+        }
+
+        /* نافذة استمارة الطلب Modal */
+        .modal-overlay {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0,0,0,0.75);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 2000;
+            padding: 15px;
+        }
+
+        .modal-content {
+            background: var(--white);
+            width: 100%;
+            max-width: 480px;
+            border-radius: 20px;
+            padding: 30px;
+            position: relative;
+            animation: slideUp 0.3s ease;
+            max-height: 92vh;
+            overflow-y: auto;
+        }
+
+        @keyframes slideUp {
+            from { transform: translateY(40px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        .close-modal {
+            position: absolute;
+            top: 15px;
+            left: 20px;
+            font-size: 1.8rem;
+            cursor: pointer;
+            color: #6b7280;
+            background: none;
+            border: none;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            display: block;
+            font-weight: 700;
+            margin-bottom: 6px;
+            color: var(--primary);
+        }
+
+        .form-group input, .form-group select, .form-group textarea {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1.5px solid #d1d5db;
+            border-radius: 10px;
+            font-size: 1rem;
+            outline: none;
+            transition: 0.2s;
+        }
+
+        .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
+            border-color: var(--primary);
+        }
+
+        .submit-btn {
+            width: 100%;
+            background: var(--primary);
+            color: var(--white);
+            padding: 15px;
+            border: none;
+            border-radius: 12px;
+            font-size: 1.2rem;
+            font-weight: 800;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .submit-btn:hover {
+            background: var(--primary-light);
+        }
+
+        /* الأزرار العائمة أسفل الشاشة */
+        .floating-bar {
+            position: fixed;
+            bottom: 0; left: 0; width: 100%;
+            background: var(--white);
+            padding: 12px 5%;
+            box-shadow: 0 -4px 20px rgba(0,0,0,0.12);
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            z-index: 1000;
+        }
+
+        .whatsapp-btn {
+            background: #25D366;
+            color: var(--white);
+            padding: 12px 25px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 800;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 1.05rem;
+            box-shadow: 0 4px 12px rgba(37, 211, 102, 0.3);
+        }
+
+        @media (max-width: 768px) {
+            .hero { grid-template-columns: 1fr; text-align: center; padding: 30px 5%; }
+            .hero-text h1 { font-size: 1.9rem; }
+            .main-img-box { height: 290px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- الهيدر -->
+    <header>
+        <div class="logo">
+            <i class="fa-solid fa-ear-listen"></i>
+            <span>ساوث مون الأصلي</span>
+        </div>
+        <button class="btn-order-nav" onclick="openOrderModal()">
+            <i class="fa-solid fa-cart-shopping"></i> اطلب الآن
+        </button>
+    </header>
+
+    <!-- القسم الرئيسي مع عارض الصور -->
+    <div class="hero">
+        <div class="hero-text">
+            <h1>وداعاً لطنين الأذن.. واستعد لصفاء السمع وهدوء البال!</h1>
+            <p>قطرة الأذن العشبية <strong>South Moon</strong> بحجم 30 مل، التركيبة الطبيعية المتطورة لتهدئة الأعصاب السمعية والتخلص من الوشة والصفير المزعج نهائياً.</p>
+            
+            <div class="price-box">
+                <span class="price" id="heroPrice">25,000 د.ع</span>
+                <span class="delivery" id="heroDelivery">التوصيل مجاني لجميع محافظات العراق 🇮🇶</span>
+            </div>
+            <br>
+            <button class="cta-btn" onclick="openOrderModal()">
+                <i class="fa-solid fa-bag-shopping"></i> احجز عبوتك الآن (الدفع عند الاستلام)
+            </button>
+        </div>
+
+        <!-- معرض الصور التفاعلي -->
+        <div class="gallery-container">
+            <div class="main-img-box">
+                <img id="mainDisplayImage" src="images/2.jpg" alt="قطرة ساوث مون لعلاج طنين الأذن">
+            </div>
+            <div class="thumbnails">
+                <img src="images/2.jpg" class="active" onclick="changeImage(this)" alt="صورة 2">
+                <img src="images/3.jpg" onclick="changeImage(this)" alt="صورة 3">
+                <img src="images/4.jpg" onclick="changeImage(this)" alt="صورة 4">
+                <img src="images/1.jpg" onclick="changeImage(this)" alt="صورة 1">
+                <img src="images/6.jpg" onclick="changeImage(this)" alt="صورة 6">
+                <img src="images/5.jpg" onclick="changeImage(this)" alt="صورة 5">
+                <img src="images/7.jpg" onclick="changeImage(this)" alt="صورة 7">
+            </div>
+        </div>
+    </div>
+
+    <!-- قسم تعريف طنين الأذن وأنواعه -->
+    <section>
+        <h2 class="section-title">ما هو طنين الأذن؟ وما هي أنواعه؟</h2>
+        <div class="card" style="margin-bottom: 25px; text-align: center; font-size: 1.15rem;">
+            <p><strong>طنين الأذن:</strong> هو صوت داخلي مزعج (وشة، صفير، أو طنين) يصدر من الرأس أو الأذن، يصيب جميع الفئات العمرية وخصوصاً <strong>كبار السن</strong>.</p>
+        </div>
+
+        <div class="grid-2">
+            <div class="card">
+                <h3><i class="fa-solid fa-user-check"></i> 1. طنين الأذن الذاتي (الأكثر شيوعاً)</h3>
+                <p>هو الصوت الذي يسمعه المريض وحده فقط، ويزداد وضوحاً في أوقات الهدوء وعند النوم، وهو النوع المشاع بين أغلب المرضى.</p>
+            </div>
+            <div class="card">
+                <h3><i class="fa-solid fa-stethoscope"></i> 2. طنين الأذن الموضوعي (نادر جداً)</h3>
+                <p>يكون الصوت مشابهاً لدقات القلب داخل الأذن، ويمكن لأي شخص أو للطبيب سماعه عند الفحص السريري، وهو نوع نادر جداً.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- قسم أسباب طنين الأذن الـ 9 ومضاعفاته -->
+    <section style="background: #fff; border-radius: 25px; padding: 50px 4%;">
+        <h2 class="section-title">الأسباب الـ 9 الرئيسية للإصابة بطنين الأذن</h2>
+        <div class="grid-3">
+            <div class="card">
+                <h3><i class="fa-solid fa-person-cane"></i> 1. التقدم بالعمر</h3>
+                <p>وهو السبب الأكثر شيوعاً، حيث يبدأ السمع بالتراجع تدريجياً مع التقدم في السن.</p>
+            </div>
+            <div class="card">
+                <h3><i class="fa-solid fa-volume-high"></i> 2. الضوضاء العالية</h3>
+                <p>التعرض للأصوات العالية مثل الموسيقى الصاخبة، المعدات الثقيلة، والأسلحة النارية.</p>
+            </div>
+            <div class="card">
+                <h3><i class="fa-solid fa-ear-deaf"></i> 3. تراكم شمع الأذن</h3>
+                <p>تراكم الشمع يؤدي إلى انسداد واضح في قناة الأذن وتوليد صوت الطنين.</p>
+            </div>
+            <div class="card">
+                <h3><i class="fa-solid fa-user-injured"></i> 4. إصابات الرأس والرقبة</h3>
+                <p>التعرض لكدمات أو إصابات مباشرة تؤثر على أعصاب السمع أو تروية الأذن.</p>
+            </div>
+            <div class="card">
+                <h3><i class="fa-solid fa-heart-pulse"></i> 5. مشاكل تدفق الدم</h3>
+                <p>مثل تصلب الشرايين، ارتفاع ضغط الدم، وأمراض القلب المختلفة.</p>
+            </div>
+            <div class="card">
+                <h3><i class="fa-solid fa-person-pregnant"></i> 6. فترة الحمل</h3>
+                <p>يحدث الطنين أحياناً بسبب زيادة تدفق الدم وضغط الدورة الدموية أثناء الحمل.</p>
+            </div>
+            <div class="card">
+                <h3><i class="fa-solid fa-tooth"></i> 7. مشاكل الرقبة والفك</h3>
+                <p>اضطرابات المفصل الفكي التي تظهر عند تحريك الفك، أو الطقطقة، أو أثناء المضغ.</p>
+            </div>
+            <div class="card">
+                <h3><i class="fa-solid fa-head-side-cough"></i> 8. الجيوب الأنفية</h3>
+                <p>الاحتقان الناتج عن نزلات البرد الحادة، التهاب الجيوب الأنفية، أو التهابات الأذن.</p>
+            </div>
+            <div class="card">
+                <h3><i class="fa-solid fa-pills"></i> 9. بعض الأدوية</h3>
+                <p>كأثر جانبي لتناول بعض الأدوية مثل الأسبرين، مدرات البول، ومضادات الاكتئاب.</p>
+            </div>
+        </div>
+
+        <!-- المضاعفات -->
+        <div class="warning-box">
+            <h3><i class="fa-solid fa-triangle-exclamation"></i> مضاعفات إهمال طنين الأذن على حياتك اليومية:</h3>
+            <div class="tags">
+                <span class="tag"><i class="fa-solid fa-bolt"></i> التوتر والقلق المستمر</span>
+                <span class="tag"><i class="fa-solid fa-face-frown"></i> تغيرات المزاج</span>
+                <span class="tag"><i class="fa-solid fa-bed"></i> الأرق وصعوبة النوم</span>
+                <span class="tag"><i class="fa-solid fa-brain"></i> قلة التركيز</span>
+                <span class="tag"><i class="fa-solid fa-battery-quarter"></i> التعب العام والإرهاق</span>
+                <span class="tag"><i class="fa-solid fa-cloud-rain"></i> الاكتئاب</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- مميزات المنتج وطريقة الاستخدام -->
+    <section class="features-sec">
+        <h2 class="section-title">لماذا قطرة ساوث مون (South Moon) هي خيارك الأول؟</h2>
+        <div class="grid-3" style="margin-bottom: 50px;">
+            <div class="step-card">
+                <i class="fa-solid fa-leaf fa-2x" style="color: var(--accent); margin-bottom: 12px;"></i>
+                <h4>طبيعية وآمنة 100%</h4>
+                <p>مستخلصات عشبية طبيعية لطيفة على الأذن وبدون أي آثار جانبية.</p>
+            </div>
+            <div class="step-card">
+                <i class="fa-solid fa-bolt-lightning fa-2x" style="color: var(--accent); margin-bottom: 12px;"></i>
+                <h4>سريعة الامتصاص</h4>
+                <p>تتغلغل بعمق لتهدئة الأعصاب السمعية وتخفيف الطنين والانزعاج بسرعة.</p>
+            </div>
+            <div class="step-card">
+                <i class="fa-solid fa-bottle-droplet fa-2x" style="color: var(--accent); margin-bottom: 12px;"></i>
+                <h4>حجم عائلي 30 مل</h4>
+                <p>عبوة ذات تركيز عالٍ تكفي لفترة استخدام طويلة ومستمرة.</p>
+            </div>
+        </div>
+
+        <h2 class="section-title">كيف تستخدم قطرة ساوث مون؟</h2>
+        <div class="grid-3">
+            <div class="step-card">
+                <div class="step-num">1</div>
+                <h4>نظّف الأذن</h4>
+                <p>نظّف الأذن الخارجية بلطف بقطنة نظيفة وتأكد من جفافها تماماً.</p>
+            </div>
+            <div class="step-card">
+                <div class="step-num">2</div>
+                <h4>قطّر 2-3 قطرات</h4>
+                <p>أمل رأسك جانباً وضع 2 إلى 3 قطرات في الأذن، وابقَ على هذه الوضعية 30-60 ثانية.</p>
+            </div>
+            <div class="step-card">
+                <div class="step-num">3</div>
+                <h4>استرخِ وكرر</h4>
+                <p>استرخِ لعدة دقائق، واستخدم القطرة من 2 إلى 3 مرات يومياً لنتائج ملموسة.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- تجارب الزبائن العراقيين -->
+    <section>
+        <h2 class="section-title">تجارب زبائننا في العراق 🇮🇶</h2>
+        <div class="grid-3">
+            <div class="review-card">
+                <div class="stars">★★★★★</div>
+                <p>"والله العظيم جنت ما أنام الليل من ورة الوشة والصفير بأذني اليسرى، استخدمت قطرة ساوث مون 5 أيام والحمد لله هسه أنام براحة وهدوء عجيب. عاشت ايدكم."</p>
+                <div class="reviewer">
+                    <div class="reviewer-avatar">م</div>
+                    <div>
+                        <strong>الحاج أبو مصطفى</strong>
+                        <div style="font-size: 0.85rem; color: #6b7280;">بغداد - المنصور</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="review-card">
+                <div class="stars">★★★★★</div>
+                <p>"طلبتها لوالدتي لأن عمرها جبير وعدها طنين مستمر ودوخة من الصوت. من أول أسبوع كالت الصوت خف بنسبة جبيرة وحتى سمعها صار أوضح من قبل."</p>
+                <div class="reviewer">
+                    <div class="reviewer-avatar">ز</div>
+                    <div>
+                        <strong>أم زينب</strong>
+                        <div style="font-size: 0.85rem; color: #6b7280;">البصرة - الجزائر</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="review-card">
+                <div class="stars">★★★★★</div>
+                <p>"صارلي أشهر أعاني من طنين بسبب التهاب الجيوب الأنفية وتراكم الشمع، جربت هواي شغلات ما فادتني بقد هاي القطرة العشبية، مفعولها سريع وتريح الأذن."</p>
+                <div class="reviewer">
+                    <div class="reviewer-avatar">ع</div>
+                    <div>
+                        <strong>أستاذ علي العبيدي</strong>
+                        <div style="font-size: 0.85rem; color: #6b7280;">الموصل - الزهور</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- نافذة استمارة الطلب المنبثقة المرتبطة بالتليجرام -->
+    <div class="modal-overlay" id="orderModal">
+        <div class="modal-content">
+            <button class="close-modal" onclick="closeOrderModal()">&times;</button>
+            <h3 style="color: var(--primary); font-size: 1.5rem; margin-bottom: 5px; text-align: center;">
+                استمارة الحجز السريع 🚚
+            </h3>
+            <p style="text-align: center; color: #4b5563; margin-bottom: 20px; font-size: 0.95rem;">
+                املي معلوماتك وراح نتصل بيك لتأكيد الطلب (الدفع عند الاستلام)
+            </p>
+
+            <form id="telegramOrderForm" onsubmit="sendOrderToTelegram(event)">
+                <div class="form-group">
+                    <label>الاسم الكامل *</label>
+                    <input type="text" id="custName" required placeholder="مثال: محمد جاسم">
+                </div>
+
+                <div class="form-group">
+                    <label>رقم الهاتف (يرجى كتابة رقم شغال) *</label>
+                    <input type="tel" id="custPhone" required placeholder="077XXXXXXXX / 078XXXXXXXX">
+                </div>
+
+                <div class="form-group">
+                    <label>المحافظة *</label>
+                    <select id="custGov" required>
+                        <option value="">-- اختر المحافظة --</option>
+                        <option value="بغداد">بغداد</option>
+                        <option value="نينوى (الموصل)">نينوى (الموصل)</option>
+                        <option value="البصرة">البصرة</option>
+                        <option value="النجف">النجف</option>
+                        <option value="كربلاء">كربلاء</option>
+                        <option value="أربيل">أربيل</option>
+                        <option value="الأنبار">الأنبار</option>
+                        <option value="بابل">بابل</option>
+                        <option value="ديالى">ديالى</option>
+                        <option value="ذي قار">ذي قار</option>
+                        <option value="السليمانية">السليمانية</option>
+                        <option value="صلاح الدين">صلاح الدين</option>
+                        <option value="القادسية">القادسية</option>
+                        <option value="كركوك">كركوك</option>
+                        <option value="المثنى">المثنى</option>
+                        <option value="ميسان">ميسان</option>
+                        <option value="واسط">واسط</option>
+                        <option value="دهوك">دهوك</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>العنوان التفصيلي (المنطقة وأقرب نقطة دالة) *</label>
+                    <input type="text" id="custAddress" required placeholder="مثال: حي الجامعة - قرب جامع...">
+                </div>
+
+                <div class="form-group">
+                    <label>العدد المطلوب *</label>
+                    <select id="custQty">
+                        <option value="عبوة واحدة (30 مل)">عبوة واحدة (30 مل)</option>
+                        <option value="عبوتين (عرض خاص)">عبوتين (عرض خاص)</option>
+                        <option value="3 عبوات (كورس كامل)">3 عبوات (كورس كامل)</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>ملاحظات إضافية (اختياري)</label>
+                    <textarea id="custNotes" rows="2" placeholder="أي ملاحظة للمندوب..."></textarea>
+                </div>
+
+                <button type="submit" class="submit-btn" id="submitBtn">
+                    <i class="fa-solid fa-paper-plane"></i> تأكيد الحجز الآن
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- الشريط السفلي الثابت (زر الحجز + زر الواتساب) -->
+    <div class="floating-bar">
+        <button class="cta-btn" style="padding: 12px 25px; font-size: 1.05rem;" onclick="openOrderModal()">
+            <i class="fa-solid fa-cart-check"></i> احجز الآن
+        </button>
+        <a href="#" id="whatsappLink" target="_blank" class="whatsapp-btn">
+            <i class="fa-brands fa-whatsapp fa-lg"></i> تواصل واتساب
+        </a>
+    </div>
+
+    <!-- السكربت البرمجي -->
+    <script>
+        // تحميل الإعدادات من الملف الخارجي config/settings.js
+        window.addEventListener('DOMContentLoaded', () => {
+            if (typeof SITE_CONFIG !== 'undefined') {
+                // تحديث السعر وملاحظة التوصيل
+                document.getElementById('heroPrice').innerText = SITE_CONFIG.PRODUCT_PRICE;
+                document.getElementById('heroDelivery').innerText = SITE_CONFIG.DELIVERY_NOTE;
+
+                // تجهيز رابط الواتساب التلقائي
+                const waText = encodeURIComponent("السلام عليكم، أريد أستفسر عن قطرة ساوث مون لعلاج طنين الأذن.");
+                document.getElementById('whatsappLink').href = `https://wa.me/${SITE_CONFIG.WHATSAPP_NUMBER}?text=${waText}`;
+            } else {
+                console.error("لم يتم العثور على ملف config/settings.js!");
+            }
+        });
+
+        // دالة تبديل الصور في المعرض
+        function changeImage(element) {
+            document.getElementById('mainDisplayImage').src = element.src;
+            document.querySelectorAll('.thumbnails img').forEach(img => img.classList.remove('active'));
+            element.classList.add('active');
+        }
+
+        // فتح وغلق نافذة الطلب
+        function openOrderModal() {
+            document.getElementById('orderModal').style.display = 'flex';
+        }
+        function closeOrderModal() {
+            document.getElementById('orderModal').style.display = 'none';
+        }
+
+        // إرسال الطلب مباشرة إلى بوت التليجرام
+        async function sendOrderToTelegram(e) {
+            e.preventDefault();
+
+            if (typeof SITE_CONFIG === 'undefined' || !SITE_CONFIG.TELEGRAM_BOT_TOKEN || !SITE_CONFIG.TELEGRAM_CHAT_ID) {
+                alert("يرجى ضبط إعدادات التوكن والآيدي في ملف config/settings.js أولاً.");
+                return;
+            }
+
+            const btn = document.getElementById('submitBtn');
+            btn.disabled = true;
+            btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> جاري إرسال الطلب...';
+
+            const name = document.getElementById('custName').value;
+            const phone = document.getElementById('custPhone').value;
+            const gov = document.getElementById('custGov').value;
+            const address = document.getElementById('custAddress').value;
+            const qty = document.getElementById('custQty').value;
+            const notes = document.getElementById('custNotes').value || "لا توجد";
+
+            const message = `🔔 *طلب جديد - قطرة ساوث مون (طنين الأذن)*\n\n` +
+                            `👤 *الاسم:* ${name}\n` +
+                            `📞 *الهاتف:* \`${phone}\`\n` +
+                            `📍 *المحافظة:* ${gov}\n` +
+                            `🏠 *العنوان:* ${address}\n` +
+                            `📦 *الكمية:* ${qty}\n` +
+                            `💰 *السعر المعلن:* ${SITE_CONFIG.PRODUCT_PRICE}\n` +
+                            `📝 *ملاحظات:* ${notes}`;
+
+            const url = `https://api.telegram.org/bot${SITE_CONFIG.TELEGRAM_BOT_TOKEN}/sendMessage`;
+
+            try {
+                const response = await fetch(url, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        chat_id: SITE_CONFIG.TELEGRAM_CHAT_ID,
+                        text: message,
+                        parse_mode: 'Markdown'
+                    })
+                });
+
+                if (response.ok) {
+                    alert("✅ تم استلام طلبك بنجاح! سنتصل بك قريباً لتأكيد العنوان.");
+                    document.getElementById('telegramOrderForm').reset();
+                    closeOrderModal();
+                } else {
+                    alert("❌ حدث خطأ أثناء الإرسال، يرجى التأكد من التوكن والآيدي أو مراسلتنا عبر الواتساب.");
+                }
+            } catch (error) {
+                alert("❌ تعذر الاتصال بالإنترنت، يرجى المحاولة مرة أخرى أو الطلب عبر الواتساب.");
+            } finally {
+                btn.disabled = false;
+                btn.innerHTML = '<i class="fa-solid fa-paper-plane"></i> تأكيد الحجز الآن';
+            }
+        }
+    </script>
+</body>
+</html>
